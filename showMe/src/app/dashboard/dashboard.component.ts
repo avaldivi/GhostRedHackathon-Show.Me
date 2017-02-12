@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  public data;
+  public filterQuery = "";
+  public rowsOnPage = 10;
+  public sortBy = "email";
+  public sortOrder = "asc";
 
-  ngOnInit() {
+  constructor(private http: Http) {
   }
 
+  ngOnInit(): void {
+    this.http.get("app/dashboard/data.json")
+      .subscribe((data)=> {
+        setTimeout(()=> {
+          this.data = data.json();
+        }, 1000);
+      });
+  }
+
+  public toInt(num: string) {
+    return +num;
+  }
+
+  public sortByWordLength = (a: any) => {
+    return a.city.length;
+  }
+
+
+
 }
+
+

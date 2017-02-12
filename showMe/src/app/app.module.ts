@@ -13,6 +13,7 @@ import { DropdownDirective } from './dropdown.directive';
 import {routing} from "./app.routing";
 import { HomePageComponent } from './home-page/home-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {DataTableModule} from "angular2-datatable";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    DataTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
