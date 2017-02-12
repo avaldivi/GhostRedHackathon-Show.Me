@@ -1,3 +1,40 @@
-<p>
-  potential-resumes works!
-</p>
+
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add new resume</button>
+
+<div id="id01" class="modal">
+
+  <form class="modal-content animate" action="action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    </div>
+
+    <div class="container">
+      <label class="control-label">Select File</label>
+      <form action="demo_form.asp">
+        <input type="file" name="resume">
+        <input type="submit">
+      </form>
+    </div>
+
+
+  </form>
+</div>
+
+
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      mod
+      al.style.display = "none";
+    }
+  }
+</script>
